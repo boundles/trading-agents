@@ -509,7 +509,7 @@ if __name__ == "__main__":
     ]
 
     agent = KangarooTailAgent(universe=universe)
-    signals = agent.run(current_date="2025-07-16")
+    signals = agent.run(current_date="2025-08-08")
 
     # write report
     write_md("Kangaroo Tail Signals", signals, "./kangaroo_tail_signals.md")
