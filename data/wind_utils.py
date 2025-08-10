@@ -60,7 +60,9 @@ def get_data_in_range(
         return None
 
     df = pd.DataFrame(
-        list(zip(*data.Data)), columns=indicators, index=pd.to_datetime(data.Times)
+        list(zip(*data.Data)),
+        columns=indicators,
+        index=pd.to_datetime(data.Times).strftime("%Y-%m-%d"),
     )
     df.index.name = "date"
     return df
