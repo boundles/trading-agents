@@ -1,4 +1,4 @@
-from agents.kangaroo_tail_agent import KangarooTailAgent
+from agents import KangarooTailAgent, MACDDivergenceAgent
 from data.file_utils import write_md
 
 
@@ -508,8 +508,10 @@ if __name__ == "__main__":
         "ZTS.N",
     ]
 
-    agent = KangarooTailAgent(universe=universe)
-    signals = agent.run(current_date="2025-08-08")
+    agent = MACDDivergenceAgent(universe=universe)
+    signals = agent.run(current_date="2025-08-07")
+    write_md("MACD Divergence Signals", signals, "./macd_divergence_signals.md")
 
-    # write report
-    write_md("Kangaroo Tail Signals", signals, "./kangaroo_tail_signals.md")
+    # agent = KangarooTailAgent(universe=universe)
+    # signals = agent.run(current_date="2025-08-07")
+    # write_md("Kangaroo Tail Signals", signals, "./kangaroo_tail_signals.md")
